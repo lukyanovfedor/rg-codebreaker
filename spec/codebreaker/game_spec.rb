@@ -122,6 +122,18 @@ module Codebreaker
         expect(File.exist? "#{__dir__}/../../files/test.bin").to eq true
       end
 
+      it "raise TypeError, when username not string" do
+        expect { game.save_result(1234) }.to raise_error(TypeError)
+      end
+
+      it "raise TypeError, when filename not string" do
+        expect { game.save_result("john", 1234) }.to raise_error(TypeError)
+      end
+
+      it "raise ArgumentError, when no username given" do
+        expect { game.save_result }.to raise_error(ArgumentError)
+      end
+
       it "saves history array in file 'test.bin'" do
         game.save_result("john dou", "test.bin")
 
@@ -144,6 +156,10 @@ module Codebreaker
     context "#load_result" do
       after(:all) do
         File.delete "#{__dir__}/../../files/test.bin"
+      end
+
+      it "raise TypeError, when filename not string" do
+        expect { game.save_result 1234 }.to raise_error(TypeError)
       end
 
       it "load history array from file 'test.bin'" do
