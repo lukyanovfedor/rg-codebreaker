@@ -16,7 +16,6 @@ And then execute:
 
 ## Usage
 ```ruby
-<pre>
 	require "bundler/setup"
 	require "codebreaker"
 
@@ -135,4 +134,3 @@ And then execute:
 	end
 
 	ConsoleGame.start
-</pre>
