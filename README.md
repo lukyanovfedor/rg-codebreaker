@@ -15,7 +15,7 @@ And then execute:
     $ bundle
 
 ## Usage
-
+```ruby
 <pre>
 	require "bundler/setup"
 	require "codebreaker"
