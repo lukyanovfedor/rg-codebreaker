@@ -69,7 +69,7 @@ module Codebreaker
       end
     end
 
-    def load_result (filename = "result.bin")
+    def self.load_result (filename = "result.bin")
       raise TypeError, "filename is not a string" unless filename.is_a? String
 
       file = "#{__dir__}/../../files/#{filename}"

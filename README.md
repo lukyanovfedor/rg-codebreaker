@@ -116,7 +116,7 @@ And then execute:
 	    answer = gets.chomp
 
 	    if answer == "y"
-	      results = @@game.load_result
+	      results = Codebreaker::Game.load_result
 
 	      if results.empty?
 	        return puts "Sorry no result avaible"
