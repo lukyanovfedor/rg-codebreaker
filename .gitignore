@@ -8,7 +8,4 @@
 /spec/reports/
 /tmp/
 
-!/files/.keep
-/files/*
-
 .rspec
