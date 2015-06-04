@@ -16,21 +16,24 @@ module Codebreaker
 
       @attempts_number = @attempts_number - 1
 
-      used = []
+      attempt, code = attempt.split(""), @code.split("")
       out = ""
 
-      attempt.each_char.with_index do |c, i|
-        next unless @code[i] == c
+      attempt.each_with_index do |c, i|
+        next unless code[i] == c
 
-        used << c
         out << "+"
+        code[i] = ""
+        attempt[i] = ""
       end
 
-      attempt.each_char.with_index do |c, i|
-        next if used.include? c
-        next unless @code.include? c
+      attempt.delete("")
+      code.delete("")
 
-        used << c
+      attempt.each_with_index do |c, i|
+        next unless code.include? c
+
+        code[code.index(c)] = ""
         out << "-"
       end
 
