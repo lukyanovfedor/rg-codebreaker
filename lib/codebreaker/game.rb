@@ -59,6 +59,7 @@ module Codebreaker
       result[:name] = username
       result[:status] = @win ? "Win" : "Lose"
       result[:used] = @attempts_initial - @attempts_number
+      result[:code] = @code
 
       history << result
 
